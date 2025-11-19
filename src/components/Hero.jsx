@@ -1,28 +1,40 @@
-export default function Hero() {
+export default function Hero({ product }) {
   return (
     <section
       style={{
         padding: "50px",
         backgroundColor: "#111",
         color: "white",
-        textAlign: "left",
+        display: "flex",
+        alignItems: "center",
+        gap: "50px",
       }}
     >
-      <h1>JBL Live 660NC</h1>
-      <p>Keep The Noise Out, Or In. You Choose.</p>
+      {/* Left Side Text */}
+      <div>
+        <h1 style={{ fontSize: "40px", margin: "0" }}>{product.title}</h1>
+        <p>{product.tagline}</p>
 
-      <button
-        style={{
-          background: "red",
-          color: "white",
-          padding: "10px 20px",
-          border: "none",
-          marginTop: "20px",
-          cursor: "pointer",
-        }}
-      >
-        Shop Now
-      </button>
+        <button
+          style={{
+            background: "red",
+            color: "white",
+            padding: "10px 20px",
+            border: "none",
+            marginTop: "20px",
+            cursor: "pointer",
+          }}
+        >
+          Shop Now
+        </button>
+      </div>
+
+      {/* Right Side Image */}
+      <img
+        src={product.heroImage}
+        alt={product.title}
+        style={{ width: "300px" }}
+      />
     </section>
   );
 }

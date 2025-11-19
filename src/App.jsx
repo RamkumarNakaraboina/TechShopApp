@@ -2,7 +2,7 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import ProductCard from "./components/ProductCard";
-import { products } from "./data/produccts";
+import { products } from "./data/products";
 import Home from "./pages/Home";
 import Products from "./pages/Products";
 import ProductDetails from "./pages/ProductDetails";
