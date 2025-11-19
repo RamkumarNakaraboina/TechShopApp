@@ -1,5 +1,6 @@
+import productsData from "../data/productsData";
 import ProductCard from "../components/ProductCard";
-import { products } from "../data/products";
+import { Link } from "react-router-dom";
 
 export default function Products() {
   return (
@@ -14,13 +15,18 @@ export default function Products() {
           marginTop: "20px",
         }}
       >
-        {products.map((item) => (
-          <ProductCard
-            key={item.id}
-            name={item.name}
-            price={item.price}
-            image={item.image}
-          />
+        {productsData.map((product) => (
+          <Link
+            key={product.id}
+            to={`/product/${product.id}`}
+            style={{ textDecoration: "none", color: "black" }}
+          >
+            <ProductCard
+              name={product.title}
+              price={product.finalPrice}
+              image={product.images[0]}
+            />
+          </Link>
         ))}
       </div>
     </section>
